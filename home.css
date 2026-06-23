@@ -1,0 +1,226 @@
+/* ==========================================
+   GLOBAL RESET & FONTS
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ==========================================
+   HEADER STRUCTURAL LAYOUT
+   ========================================== */
+header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    /* Removed grid layout to let row divs stack naturally vertically */
+}
+
+/* --- Top Row Container --- */
+.header-top {
+    background-color: #131921;
+    /* Dark Black/Blue background */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: #ffffff;
+}
+
+/* Logo Styling */
+.header-top .logo {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 6px 10px;
+    border: 1px solid transparent;
+}
+
+/* Center Search Bar Wrap */
+.header-top .search-bar {
+    flex: 1;
+    margin: 0 30px;
+    display: flex;
+    height: 40px;
+}
+
+.header-top .search-bar input {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+}
+
+.header-top .search-bar input:focus {
+    box-shadow: 0 0 0 2px #f3a847;
+    /* Amazon's orange focus ring */
+}
+
+/* Target Nav Links Containers */
+.header-top div:nth-of-type(2),
+.header-top div:nth-of-type(3) {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-top a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 6px 10px;
+    border: 1px solid transparent;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Clean Hover boxes for elements mimicking real site action */
+.header-top .logo:hover,
+.header-top a:hover,
+.menu-button:hover {
+    border: 1px solid #ffffff;
+    border-radius: 2px;
+}
+
+/* --- Bottom Row Menu --- */
+.menu {
+    background-color: #232F3E !important;
+    /* Lighter Blue/Grey Row */
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-button {
+    background: none;
+    border: 1px solid transparent;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-weight: 500;
+    text-transform: capitalize;
+    /* Cleans up lowercase markup text dynamically */
+}
+
+/* ==========================================
+   AMAZON HERO BANNER STYLES
+   ========================================== */
+.banner-container {
+    width: 100%;
+    max-width: 1500px;
+    /* Aligns with your main container width */
+    margin: 0 auto;
+    position: relative;
+    /* This negative margin pulls your product cards UP over the image, just like image_0a84d9.jpg */
+    margin-bottom: -250px;
+    z-index: 1;
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    /* Limits the banner height so it doesn't take over the page */
+
+
+    /* Creates the classic Amazon gradient mask that fades the bottom out smoothly into the grey background */
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* ==========================================
+   ADJUSTMENTS FOR YOUR CONTENT
+   ========================================== */
+/* Ensure your h2 and product grid sit over the banner */
+main h2,
+.product-grid {
+    position: relative;
+    z-index: 2;
+    /* Pushes content forward on top of the fading banner */
+}
+
+/* Gives the Top Deals heading some breathing room over the image */
+main h2 {
+    color: #0f1111;
+    padding-top: 30px;
+    margin-bottom: 15px;
+}
+
+.product-section {
+    display: grid;
+    align-items: between;
+    justify-content: space-between;
+}
+
+.product-grid {
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(auto, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.product {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
+    width: auto;
+    text-align: center;
+    padding: 10px;
+}
+
+.product img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.footer {
+    background-color: #232F3E;
+    color: #fff;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(auto, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+
+.footer-div {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+
+    padding: 20px;
+    /* justify-content: center; */
+}
+.footer-div img {
+  
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 5px 0;
+}
